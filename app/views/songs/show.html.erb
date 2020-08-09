@@ -1,7 +1,13 @@
 <h1><%=@song.title%></h1>
 <p>
 Arist: <%=@song.artist_name%><br>
-Released: <%='yes' if @song.released%><br>
-Release Year: <%=@song.release_year if @song.released %><br>
+<%if @song.released%>
+    <%='Released: yes'%><br>
+    <%="Release Year: #{@song.release_year}"%>
+<%else%>
+    <%='Unreleased'%>
+<%end%>
+<br>
 Genre: <%=@song.genre%><br>
 </p>
+<%= link_to 'Delete this dude', @song, method: :delete, data:{confirm:'For real?'} %>

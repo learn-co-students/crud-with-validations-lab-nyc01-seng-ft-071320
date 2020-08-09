@@ -1,27 +1,31 @@
 <h1>Songs</h1>
 
-<div><%= link_to "Create Song", new_song_path %></div>
-
+<div>
+    <p>
+        <%= link_to "Create Song", new_song_path %>
+    </p>
+</div>
 <table>
     <thead>
         <tr>
-            <th>Title</th>
-            <th>Year</th>
-            <th>Genre</th>
-            <th>Artist Name</th>
-            <th></th>
+            <th>Title </th>
+            <th>Year </th>
+            <th>Genre </th>
+            <th>Artist Name </th>
+            <th>Update</th>
+            <th>delete</th>
         </tr>
     </thead>
-
     <tbody>
         <%@songs.each do |song|%>
         <tr>
-            <td><%=song.title%></td>
+            <td><%= link_to song.title, song_path(song) %></td>
             <td><%=song.release_year%></td>
             <td><%=song.genre%></td>
             <td><%=song.artist_name%></td>
-            <td>
-            </td>
+            <td><%= link_to 'update', song_path(song) %></td>
+            <td><%= link_to 'delete', song, method: :delete, data:{confirm:'For real?'} %></td>
         </tr>
         <%end%>
     </tbody>
+    <sub>* UN means the song is unreleased</sub>

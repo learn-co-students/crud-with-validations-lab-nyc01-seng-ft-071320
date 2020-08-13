@@ -1,0 +1,14 @@
+<h1><%= @song.artist_name %></h1>
+
+<h2>List of songs</h2>
+<ul>
+<% Song.all.each do |song| %>
+    <% if @song.artist_name == song.artist_name%>
+       <li> <%= song.title %><br></li>
+       <ul>
+            <li>Released: <%= song.released %></li>
+            <li>Released Date: <%= song.release_year %></li>
+       </ul>
+    <% end%>
+ <% end%>
+ </ul>

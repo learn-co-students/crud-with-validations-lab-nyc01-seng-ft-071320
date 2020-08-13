@@ -1,0 +1,14 @@
+<h1>Song Info</h1>
+<ul>
+  <li>Title: <%= @song.title %></li>
+  <li>Released Year: <%= @song.release_year %></li>
+  <li>Artist: <%= @song.artist_name %></li>
+  <li>Genre: <%= @song.genre %></li>
+</ul>
+
+<p>
+  <%= button_to 'Edit',  edit_song_path(@song), method: :get %>
+  <%= button_to 'Delete', song_path(@song), method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+
+<p><%= link_to 'Go back to index page', songs_path %></p>

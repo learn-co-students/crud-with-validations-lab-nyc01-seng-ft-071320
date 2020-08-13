@@ -1,0 +1,5 @@
+<h1>Song List</h1>
+
+<% @songs.uniq.each do |song|%>
+<p><%= link_to song.title, song_path(song) %></p>
+<% end %>

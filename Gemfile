@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails-controller-testing'
 gem 'bootsnap'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 group :development, :test do
   gem 'capybara'
   gem 'pry'

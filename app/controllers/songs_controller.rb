@@ -18,6 +18,7 @@ class SongsController < ApplicationController
         if @song.valid?
             redirect_to @song
         else
+            flash[:my_errors] = @song.errors.full_messages
             render :new
         end
     end
@@ -29,6 +30,7 @@ class SongsController < ApplicationController
         if @song.update(song_params)
             redirect_to (@song)
         else
+            flash[:my_errors] = @song.errors.full_messages
             render :edit
         end
     end
